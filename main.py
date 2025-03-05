@@ -1,20 +1,8 @@
-import requests
-import time
 import json
-import statistics
 import argparse
-import random
-import string
-import uuid
-import datetime
-import os
 import sys
-from typing import Dict, Any, List, Union, Optional, Callable
-from tabulate import tabulate
-from concurrent.futures import ThreadPoolExecutor
-import lorem  # For generating text placeholders
-from dynamic_content_generator import DynamicContentGenerator
-from api_tester import ApiTester
+from api_tester import APITester
+import template
 
 def main():
     parser = argparse.ArgumentParser(description="API Testing Tool")
@@ -58,14 +46,14 @@ def main():
 
     # Handle template creation
     if args.create_template:
-        save_config_template(args.create_template)
+        template.save_config_template(args.create_template)
         return
 
     # Process config file if provided
     if args.config:
         try:
-            config = load_config_file(args.config)
-            run_tests_from_config(config, args)
+            config = template.load_config_file(args.config)
+            template.run_tests_from_config(config, args)
             return
         except ValueError as e:
             print(f"Error: {str(e)}")

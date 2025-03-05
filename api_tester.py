@@ -2,18 +2,10 @@ import requests
 import time
 import json
 import statistics
-import argparse
-import random
-import string
-import uuid
-import datetime
-import os
-import sys
-from typing import Dict, Any, List, Union, Optional, Callable
+from typing import Dict, Any
 from tabulate import tabulate
 from concurrent.futures import ThreadPoolExecutor
-import lorem  # For generating text placeholders
-import DynamicContentGenerator
+from dynamic_content_generator import DynamicContentGenerator
 
 class APITester:
   def __init__(self, url: str, method: str = "GET", headers: Dict = None, 

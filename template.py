@@ -1,19 +1,8 @@
-import requests
-import time
 import json
-import statistics
-import argparse
-import random
-import string
-import uuid
 import datetime
-import os
-import sys
-from typing import Dict, Any, List, Union, Optional, Callable
-from tabulate import tabulate
-from concurrent.futures import ThreadPoolExecutor
-import lorem  # For generating text placeholders
-import DynamicContentGenerator
+from typing import Dict, Any
+
+from api_tester import APITester
 
 def load_config_file(config_path: str) -> Dict[str, Any]:
   """
