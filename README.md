@@ -38,7 +38,7 @@ This Python-based API testing tool provides a robust, flexible solution for test
 
 ### Install Dependencies
 ```bash
-python api_tester.py --install-deps
+python main.py --install-deps
 ```
 
 ### Required Libraries
@@ -50,22 +50,22 @@ python api_tester.py --install-deps
 
 ### 1. Create Configuration Template
 ```bash
-python api_tester.py --create-template api_config.json
+python main.py --create-template api_config.json
 ```
 
 ### 2. Run Tests for All Routes
 ```bash
-python api_tester.py --config api_config.json
+python main.py --config api_config.json
 ```
 
 ### 3. Test Specific Routes
 ```bash
-python api_tester.py --config api_config.json --route "Get Users" --route "Create User"
+python main.py --config api_config.json --route "Get Users" --route "Create User"
 ```
 
 ### 4. Single Route Testing
 ```bash
-python api_tester.py --url https://api.example.com/users \
+python main.py --url https://api.example.com/users \
                      --method POST \
                      --body '{"name": "Test User"}' \
                      --requests 50 \
